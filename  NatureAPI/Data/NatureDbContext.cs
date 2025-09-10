@@ -1,9 +1,8 @@
 using NatureAPI.Models;
-
-namespace NatureAPI.Data;
-
 using Microsoft.EntityFrameworkCore;
 using System;
+
+namespace NatureAPI.Data;
 
 public class NatureDbContext : DbContext
 {
@@ -40,7 +39,7 @@ public class NatureDbContext : DbContext
             .WithOne(r => r.Place)
             .HasForeignKey(r => r.PlaceId)
             .OnDelete(DeleteBehavior.Cascade);
-
+        
         modelBuilder.Entity<PlaceAmenity>()
             .HasOne(pa => pa.Place)
             .WithMany(p => p.PlaceAmenities)
@@ -70,7 +69,7 @@ public class NatureDbContext : DbContext
                 Accessible = true,
                 EntryFee = 50.0,
                 OpeningHours = "08:00-18:00",
-                CreatedAt = DateTime.UtcNow
+                CreatedAt = new DateTime(2025, 9, 10, 9, 0, 0)
             },
             new Place {
                 Id = 2,
@@ -83,7 +82,7 @@ public class NatureDbContext : DbContext
                 Accessible = false,
                 EntryFee = 0.0,
                 OpeningHours = "06:00-17:00",
-                CreatedAt = DateTime.UtcNow
+                CreatedAt = new DateTime(2025, 9, 10, 9, 10, 0)
             },
             new Place {
                 Id = 3,
@@ -96,7 +95,7 @@ public class NatureDbContext : DbContext
                 Accessible = true,
                 EntryFee = 0.0,
                 OpeningHours = "00:00-23:59",
-                CreatedAt = DateTime.UtcNow
+                CreatedAt = new DateTime(2025, 9, 10, 9, 20, 0)
             }
         );
         
@@ -119,11 +118,11 @@ public class NatureDbContext : DbContext
         );
         
         modelBuilder.Entity<PlaceAmenity>().HasData(
-            new PlaceAmenity { PlaceId = 1, AmenityId = 3 }, 
-            new PlaceAmenity { PlaceId = 1, AmenityId = 2 }, 
-            new PlaceAmenity { PlaceId = 2, AmenityId = 2 }, 
-            new PlaceAmenity { PlaceId = 3, AmenityId = 1 }, 
-            new PlaceAmenity { PlaceId = 3, AmenityId = 4 }  
+            new PlaceAmenity { PlaceId = 1, AmenityId = 3 },
+            new PlaceAmenity { PlaceId = 1, AmenityId = 2 },
+            new PlaceAmenity { PlaceId = 2, AmenityId = 2 },
+            new PlaceAmenity { PlaceId = 3, AmenityId = 1 },
+            new PlaceAmenity { PlaceId = 3, AmenityId = 4 }
         );
     }
 }
