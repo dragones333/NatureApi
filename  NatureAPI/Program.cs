@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using NatureAPI.Data;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +10,11 @@ var connectionString = builder.Configuration.GetConnectionString("NatureDb")
 builder.Services.AddDbContext<NatureDbContext>(options =>
     options.UseSqlServer(connectionString));
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(x =>
+        x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve
+    );
+
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
