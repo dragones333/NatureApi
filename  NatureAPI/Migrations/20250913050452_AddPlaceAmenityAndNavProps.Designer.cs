@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NatureAPI.Data;
 
@@ -11,9 +12,11 @@ using NatureAPI.Data;
 namespace NatureAPI.Migrations
 {
     [DbContext(typeof(NatureDbContext))]
-    partial class NatureDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250913050452_AddPlaceAmenityAndNavProps")]
+    partial class AddPlaceAmenityAndNavProps
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
