@@ -4,7 +4,7 @@
 
 API REST desarrollada en **.NET 8** para gestionar **lugares naturales de México** (parques, cascadas, miradores, senderos), incluyendo coordenadas, fotos, reseñas y amenidades.
 
-## 📌 Requisitos
+##  Requisitos
 
 * [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 * [Docker](https://www.docker.com/)
@@ -12,29 +12,29 @@ API REST desarrollada en **.NET 8** para gestionar **lugares naturales de Méxic
 
 ---
 
-## ⚙️ Configuración del proyecto
+##  Configuración del proyecto
 
-### 1️⃣ Clonar el repositorio
+### 1️ Clonar el repositorio
 
 ```bash
 git clone https://github.com/tu-usuario/NatureAPI.git
 cd NatureAPI
 ```
 
-### 2️⃣ Levantar SQL Server con Docker
+### 2️ Levantar SQL Server con Docker
 
 ```bash
 docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Your_password123" `
    -p 1433:1433 --name sqlnature -d mcr.microsoft.com/mssql/server:2022-latest
 ```
 
-🔑 Usuario: `sa`
-🔑 Password: `Your_password123`
-📦 Puerto: `1433`
+ Usuario: `sa`
+ Password: `Your_password123`
+ Puerto: `1433`
 
 ---
 
-### 3️⃣ Configurar la conexión en `appsettings.json`
+### 3️ Configurar la conexión en `appsettings.json`
 
 ```json
 "ConnectionStrings": {
@@ -44,7 +44,7 @@ docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Your_password123" `
 
 ---
 
-### 4️⃣ Ejecutar migraciones y seed
+### 4️ Ejecutar migraciones y seed
 
 ```bash
 dotnet ef database update
@@ -59,18 +59,18 @@ Esto creará las tablas y agregará los **datos iniciales (seed)**:
 
 ---
 
-### 5️⃣ Levantar la API
+### 5️ Levantar la API
 
 ```bash
 dotnet run
 ```
 
 La API quedará disponible en:
-👉 `http://localhost:5001/api/places`
+ `http://localhost:5001/api/places`
 
 ---
 
-## 📂 Entidades principales
+##  Entidades principales
 
 * **Place** → Lugar natural principal
 * **Trail** → Senderos asociados a un lugar
@@ -88,21 +88,21 @@ Relaciones:
 
 ---
 
-## 🔗 Endpoints principales
+##  Endpoints principales
 
-### ✅ Obtener todos los lugares (con filtros opcionales)
+###  Obtener todos los lugares (con filtros opcionales)
 
 ```http
 GET /api/places?category=Cascada&difficulty=Alta
 ```
 
-### ✅ Obtener un lugar por ID
+###  Obtener un lugar por ID
 
 ```http
 GET /api/places/1
 ```
 
-### ✅ Crear un nuevo lugar
+###  Crear un nuevo lugar
 
 ```http
 POST /api/places
@@ -123,7 +123,7 @@ Content-Type: application/json
 
 ---
 
-## 📝 Criterios cumplidos
+##  Criterios cumplidos
 
 ✔ Diseño de entidades y relaciones con EF Core
 ✔ Migraciones en SQL Server con Docker
@@ -134,7 +134,7 @@ Content-Type: application/json
 
 ---
 
-## 📜 Licencia
+##  Licencia
 
 Este proyecto fue desarrollado como parte del **Examen Parcial de Desarrollo con .NET 8**.
 
