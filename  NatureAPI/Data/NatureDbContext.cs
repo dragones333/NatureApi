@@ -112,9 +112,9 @@ public class NatureDbContext : DbContext
         );
         
         modelBuilder.Entity<Photo>().HasData(
-            new Photo { Id = 1, PlaceId = 1, Url = "https://upload.wikimedia.org/wikipedia/commons/1/12/Hierve_el_Agua_01.jpg", Description = "Vista de las cascadas petrificadas" },
-            new Photo { Id = 2, PlaceId = 2, Url = "https://upload.wikimedia.org/wikipedia/commons/4/4b/Cascada_Tamul.jpg", Description = "Cascada de Tamul" },
-            new Photo { Id = 3, PlaceId = 3, Url = "https://upload.wikimedia.org/wikipedia/commons/7/74/Iztaccihuatl.jpg", Description = "Iztaccíhuatl desde el parque" }
+            new Photo { Id = 1, PlaceId = 1, Url = "https://i0.wp.com/www.turimexico.com/wp-content/uploads/2015/07/eehierveelagua.jpg?w=747&ssl=1", Description = "Vista de las cascadas petrificadas" },
+            new Photo { Id = 2, PlaceId = 2, Url = "https://i0.wp.com/www.turimexico.com/wp-content/uploads/2015/07/eetamul.jpg?w=500&ssl=1", Description = "Cascada de Tamul" },
+            new Photo { Id = 3, PlaceId = 3, Url = "https://www.gob.mx/cms/uploads/article/main_image/27513/blog_izta_popo.jpg", Description = "Iztaccíhuatl desde el parque" }
         );
         
         modelBuilder.Entity<PlaceAmenity>().HasData(
