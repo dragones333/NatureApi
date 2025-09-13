@@ -1,6 +1,6 @@
 ---
 
-# 🌿 NatureAPI – Examen Parcial
+#  NatureAPI – Examen Parcial
 
 API REST desarrollada en **.NET 8** para gestionar **lugares naturales de México** (parques, cascadas, miradores, senderos), incluyendo coordenadas, fotos, reseñas y amenidades.
 
